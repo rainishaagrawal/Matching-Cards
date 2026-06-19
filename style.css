@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+.grid{
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card{
+    margin: 5px;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform-style: preserve-3d;
+    transition: transform .5s , opacity .5s;
+    cursor: pointer;
+}
+
+.front,
+.back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.front{
+    background: url("image/question.gif") no-repeat center;
+    background-size: contain;
+    z-index: 2;
+}
+
+.back{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotateY(180deg);
+    background-color: bisque;
+}
+
+.selected{
+    transform: rotateY(180deg);
+}
+
+.match{
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
